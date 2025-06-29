@@ -1,0 +1,20 @@
+def check_duplicates(arr):
+    n = len(arr)
+    
+    # Outer loop to pick each element one by one
+    for i in range(n - 1):
+      
+        # Inner loop to compare the current element with the 
+        # rest of the elements
+        for j in range(i + 1, n):
+          
+            # If a duplicate is found return True
+            if arr[i] == arr[j]:
+                return True 
+    
+    # If no duplicates are found, return False
+    return False
+
+if __name__ == "__main__":
+    arr = [4, 5, 6, 4]
+    print(check_duplicates(arr))
