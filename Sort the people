@@ -1,0 +1,11 @@
+def tallestPerson(names, heights):
+    # Find index of the tallest person
+    max_index = heights.index(max(heights))
+    
+    # Get their name
+    tallest_name = names[max_index]
+    
+    return f"{tallest_name} is the tallest"
+names = ["Mary", "John", "Emma"]
+heights = [180, 165, 170]
+print(tallestPerson(names, heights))
