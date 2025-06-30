@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+// Helper function to check if a string is palindromic
+bool isPalindrome(const string& s)
+{
+    int left = 0;
+    int right = s.size() - 1;
+    while (left < right) {
+        if (s[left] != s[right]) {
+            return false;
+        }
+        left++;
+        right--;
+    }
+    return true;
+}
+
+string firstPalindrome(vector<string>& words)
+{
+    //Iterate through each string in the words
+    // array
+    for (const string& word : words) {
+        // Step 3: Check if the current string is a
+        // palindrome
+        if (isPalindrome(word)) {
+            // Step 4: Return the first palindromic string
+            // found
+            return word;
+        }
+    }
+    //If no palindromic string is found, return an
+    // empty string
+    return "";
+}
+
+// Driver code
+int main()
+{
+    vector<string> words1
+        = { "abc", "car", "ada", "racecar", "cool" };
+    cout << firstPalindrome(words1) << endl;
+
+    return 0;
+}
